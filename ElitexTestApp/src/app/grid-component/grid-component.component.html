@@ -1,0 +1,31 @@
+<div class="widget-wrap">
+  <div class="w-head">
+    <div class="widg-title">
+      <span *ngIf="!editMode" class="widg-title-text" (click)="showInput()">{{title}}</span>
+      <app-input-component *ngIf="editMode" [value]="title"  (save)="titleChange($event)" (cancel)="hideInput($event)"></app-input-component>
+    </div>
+    <div class="widg-but widg-expand" [ngClass]="{'widg-collaps': !expand}" (click)="hidePanel()"></div>
+  </div>
+  <div class="expand-panel" [ngClass]="{'collaps-panel': !expand}">
+      <div class="w-body">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="w-foot">
+          <span class="w-total"></span>
+          <span class="w-total-price"></span>
+        </div>
+  </div>
+</div>

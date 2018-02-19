@@ -1,0 +1,3 @@
+<input class="input" [ngClass]="{'invalid': invalid}" type="text" [value]="value" required
+  placeholder="Enter title" (keydown)="onKeyPress($event)"
+  (blur)="focusOut()" [focus]="focused" (input)="onInput($event.target.value)">
